@@ -10,7 +10,7 @@ class   Curriculum:
         self.lesson_code = lesson_code
         self.teacher_name = teacher_name
         self.lesson_credits = lesson_credits
-        self.Lesson_list = []
+        self.lesson_credits = []
 
     def add_lesson(self, lesson):
         self.lesson_list.append(lesson)
