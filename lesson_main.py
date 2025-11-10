@@ -8,8 +8,7 @@ for i in range(2):
     teacher_name = input("Enter Teacher's Name : ")
     lesson_code = None
 
-    #address = input("Enter Address : ")
-    #email = input("Enter Email : ")
+
    #new_lesson = Curriculum((lesson_code, lesson_name, teacher_name) )
 
   #  print("Saved.")
