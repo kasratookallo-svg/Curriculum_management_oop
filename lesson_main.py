@@ -1,4 +1,4 @@
-# Curriculum Designing Programming
+# Curriculum Designing Program
 # Made By Kasra Tookallo
 
 from lesson_module import Curriculum
