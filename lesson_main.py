@@ -27,4 +27,4 @@ except Exception as e:
 print("Saved.")
 print("-" * 150)
 
-# todo Only validation for lesson_name and teacher_name don't work sufficiently.
+# todo Only validation for lesson_name and teacher_name does'nt work sufficiently.
