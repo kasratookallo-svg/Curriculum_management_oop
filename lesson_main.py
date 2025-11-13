@@ -1,3 +1,5 @@
+# Curriculum Designing Programming
+# Made By Kasra Tookallo
 
 from lesson_module import Curriculum
 from lesson_module import *
@@ -6,6 +8,7 @@ study_list = []
 
 try :
     for i in range(2):
+        #Getting Lesson information
         lesson_code = 0
         lesson_credits = 0
         lesson_name = input("Enter Lesson Name : ")
@@ -18,18 +21,10 @@ try :
         lesson.save()
         print(study_list)
 
-        #study_list.append(new_lesson)
 except Exception as e:
      print(f"Error: {e}")
 
-
-
-#print("Study Info = " , new_lesson)
 print("Saved.")
-print("-" * 15)
+print("-" * 150)
 
-
-#for lesson in lesson_list :
- #   print(lesson)
-
-
+# todo Only validation for lesson_name and teacher_name don't work sufficiently.
