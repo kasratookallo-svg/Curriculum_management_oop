@@ -4,16 +4,17 @@ import re
 class   Curriculum:
     #Donder _ Double Underlines or magic function
     # Method
-    def __init__(self,lesson_name,lesson_code, teacher_name , lesson_credits):
+    def __init__(self, lesson_name, lesson_code, teacher_name , lesson_credits):
         # Property
         self.lesson_name = lesson_name
         self.lesson_code = lesson_code
         self.teacher_name = teacher_name
         self.lesson_credits = lesson_credits
-        self.lesson_credits = []
+        self.lesson_list = []
 
     def add_lesson(self, lesson):
-        self.lesson_list.append(lesson)
+        pass
+
 
     # Method
     def save(self):
@@ -21,11 +22,12 @@ class   Curriculum:
     # Method
     def validation(self):
         return (re.match(r"^[a-zA-Z\s]{3,30}$",self.lesson_name ) and
+                (type(self.lesson_code) == int and self.lesson_code >= 0) and
                 re.match(r"^[a-zA-Z\s]{3,30}$", self.teacher_name) and
-                self.lesson_code >= 0 and
-                20 >= self.lesson_credits >= 0)
+                (type(self.lesson_credits) == int and self.lesson_credits >= 0)
+                )
 
     def __repr__(self):
-        return f" {self.lesson_name:10} (Code) {self.lesson_code}: (Credits) {self.lesson_credits:10} - Teacher's Name : {self.teacher_name:10} "
+        return f" \n{self.lesson_name} \t---->>(Code) {self.lesson_code:5}: (Credits)\t---->> {self.lesson_credits} \nTeacher's Name :\t\t {self.teacher_name}\n "
         #return "Person(name={},age={})".format(self.name, self.age)
 
