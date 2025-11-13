@@ -14,7 +14,9 @@ class   Curriculum:
         self.lesson_credits = lesson_credits
         self.lesson_list = []
 
+
     def add_lesson(self, lesson):
+        #study_list.append(lesson)
         pass
 
 

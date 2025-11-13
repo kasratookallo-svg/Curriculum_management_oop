@@ -16,7 +16,7 @@ try :
         teacher_name = input("Enter Teacher's Name : ")
         lesson_credits = int(input("Enter Lesson Credits : "))
         lesson = Curriculum(lesson_name, lesson_code, teacher_name, lesson_credits)
-        lesson.validation()
+        #lesson.validation()
         study_list.append(lesson)
         lesson.save()
         print(study_list)
