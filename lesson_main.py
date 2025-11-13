@@ -19,7 +19,7 @@ try :
         #lesson.validation()
         study_list.append(lesson)
         lesson.save()
-        print(study_list)
+        print("Your Stduies include : ",study_list)
 
 except Exception as e:
      print(f"Error: {e}")
