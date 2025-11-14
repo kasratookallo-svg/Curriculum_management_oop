@@ -25,13 +25,26 @@ class   Curriculum:
         print(f"INFO :   {self.lesson_name:10} , {self.lesson_code:} \t\t {self.teacher_name:10} , {self.lesson_credits:}")
     # Method_function
     def validation(self ):
-        return (re.match(r"^[a-zA-Z\s]{3,30}$",self.lesson_name ) and
-                (type(self.lesson_code) == int and self.lesson_code >= 0) and
-                re.match(r"^[a-zA-Z\s]{3,30}$", self.teacher_name) and
-                (type(self.lesson_credits) == int and self.lesson_credits >= 0)
-                )
+
+        if not re.match(r"^[a-zA-Z\s]{3,30}$",self.lesson_name ):
+            raise NameError("Lesson Name Error!!!!")
+
+        if not (type(self.lesson_code) == int and self.lesson_code > 0):
+            raise NameError("Code Error!!!!")
+
+        if not re.match(r"^[a-zA-Z\s]{3,30}$", self.teacher_name):
+            raise NameError("Teacher Name Error!!!!")
+
+        if not  (type(self.lesson_credits) == int and self.lesson_credits > 0):
+            raise NameError("Lesson Credits Error!!!!")
+        return True
+
+
+
+
+        return True
     # Representation
     def __repr__(self):
-        return f" \n{self.lesson_name} \t---->>(Code) {self.lesson_code:5}: (Credits)\t---->> {self.lesson_credits} \nTeacher's Name :\t\t {self.teacher_name}\n "
+        return f" \n{self.lesson_name} (Code :{self.lesson_code:^5})\t--->>\t{self.lesson_credits}\t( Credits ) \nTeacher's Name :\t\t {self.teacher_name}\n "
 
 
