@@ -21,26 +21,21 @@ def reset_table():
 study_list = []
 def receive_data():
     try :
-        for i in range(2):
-            #Getting Lesson information
-            lesson_code = 0
-            lesson_credits = 0
-            lesson_name = input("Enter Lesson Name : ")
-            lesson_code = int(input("Enter Lesson Code : "))
-            teacher_name = input("Enter Teacher's Name : ")
-            lesson_credits = int(input("Enter Lesson Credits : "))
-            lesson = Curriculum(lesson_name , lesson_code , teacher_name, lesson_credits)
-            lesson.validation()
-            study_list.append(lesson)
-            print("-" * 150)
-            lesson.save()
-            print("-" * 150)
-            table.insert(""  , END , values=lesson.to_tuple())
-            messagebox.showinfo("Data Saved." , "Lesson saved successfully.")
-            reset_table()
+        lesson = Curriculum(lesson_name.get() , lesson_code.get() , teacher_name.get(), lesson_credits.get())
+        lesson.validation()
+        study_list.append(lesson)
+        print("-" * 150)
+        lesson.save()
+        print("-" * 150)
 
-            print("Your Stduies include : ",study_list)
-            print("-" * 150)
+        #To insert Data into the table
+        table.insert(""  , END , values=lesson.to_tuple())
+        print("Data Saved.")
+        messagebox.showinfo("Data Saved." , "Lesson saved in Table successfully.")
+        print("Your Stduies include : ",study_list)
+        print("-" * 150)
+        reset_table()
+
 
 
     except Exception as e:
@@ -75,7 +70,7 @@ Entry(Window, textvariable=teacher_name).place(x=100, y=200)
 
 # Entry 4
 Label(Window, text="Lesson Credits").place(x=10, y=250)
-lesson_credits = StringVar()
+lesson_credits = IntVar()
 Entry(Window, textvariable=lesson_credits).place(x=100, y=250)
 
 Button(Window, text="Save", command=receive_data , width=53).place(x=10, y=300)
@@ -103,5 +98,3 @@ table.place(x=10, y=10 , width=380, height=75)
 
 reset_table()
 Window.mainloop()
-
-#todo Button Save in Table does'nt operate properly.

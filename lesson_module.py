@@ -3,6 +3,7 @@ import re
 
 # Molding Studies
 class   Curriculum:
+
     #Donder _ Double Underlines or magic function
     # Method
     def __init__(self, lesson_name, lesson_code, teacher_name , lesson_credits):
@@ -13,19 +14,14 @@ class   Curriculum:
         self.lesson_credits = lesson_credits
         self.lesson_list = []
 
-
-    def add_lesson(self, lesson):
-        #study_list.append(lesson)
-        pass
-
-
-    # Method
+    # Method_Show Result
     def save(self):
-        print(f"INFO :   {self.lesson_name:10} , {self.lesson_code:} \t\t {self.teacher_name:10} , {self.lesson_credits:}")
+        print(f"INFO :   {self.lesson_name:10} , {self.lesson_code:} \t\t {self.teacher_name:10} , {self.lesson_credits}")
+
     # Method_function
     def validation(self ):
 
-        if not re.match(r"^[a-zA-Z\s]{3,30}$",self.lesson_name ):
+        if not re.match(r"^[a-zA-Z\s]{3,30}$",self.lesson_name):
             raise NameError("Lesson Name Error!!!!")
 
         if not (type(self.lesson_code) == int and self.lesson_code > 0):
@@ -34,12 +30,8 @@ class   Curriculum:
         if not re.match(r"^[a-zA-Z\s]{3,30}$", self.teacher_name):
             raise NameError("Teacher Name Error!!!!")
 
-        if not  (type(self.lesson_credits) == int and self.lesson_credits > 0):
+        if not (type(self.lesson_credits) == int and self.lesson_credits > 0):
             raise NameError("Lesson Credits Error!!!!")
-        return True
-
-
-
 
         return True
 
@@ -48,4 +40,4 @@ class   Curriculum:
         return f" \n{self.lesson_name} (Code :{self.lesson_code:^5})\t--->>\t{self.lesson_credits}\t( Credits ) \nTeacher's Name :\t\t {self.teacher_name}\n "
 
     def to_tuple(self):
-        return ((self.lesson_name, self.lesson_code, self.teacher_name, self.lesson_credits))
+        return tuple((self.lesson_name, self.lesson_code, self.teacher_name, self.lesson_credits))
