@@ -29,7 +29,6 @@ def receive_data():
 
         #To insert Data into the table
         table.insert(""  , END , values=lesson.to_tuple())
-        print("Data Saved.")
         messagebox.showinfo("Data Saved." , "Lesson saved in the table successfully.")
         print("Your Stduies include : ",study_list)
         print("-" * 150)
@@ -38,7 +37,6 @@ def receive_data():
 
 
     except Exception as e:
-        print(f"Error: {e}")
         messagebox.showerror("Error", f"Something went wrong:{e}")
 
 
