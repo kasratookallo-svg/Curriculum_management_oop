@@ -16,7 +16,7 @@ class   Curriculum:
 
     # Method_Show Result
     def save(self):
-        print(f"INFO :   {self.lesson_name:10} , {self.lesson_code:} \t\t {self.teacher_name:10} , {self.lesson_credits}")
+        print(f"INFO :   {self.lesson_name:10} , {self.lesson_code:} \t\t ,{self.teacher_name:10} , {self.lesson_credits}")
 
     # Method_function
     def validation(self ):

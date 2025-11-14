@@ -24,14 +24,13 @@ def receive_data():
         lesson = Curriculum(lesson_name.get() , lesson_code.get() , teacher_name.get(), lesson_credits.get())
         lesson.validation()
         study_list.append(lesson)
-        print("-" * 150)
         lesson.save()
         print("-" * 150)
 
         #To insert Data into the table
         table.insert(""  , END , values=lesson.to_tuple())
         print("Data Saved.")
-        messagebox.showinfo("Data Saved." , "Lesson saved in Table successfully.")
+        messagebox.showinfo("Data Saved." , "Lesson saved in the table successfully.")
         print("Your Stduies include : ",study_list)
         print("-" * 150)
         reset_table()
