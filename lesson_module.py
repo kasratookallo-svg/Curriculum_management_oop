@@ -43,8 +43,10 @@ class   Curriculum:
 
 
         return True
+
     # Representation
     def __repr__(self):
         return f" \n{self.lesson_name} (Code :{self.lesson_code:^5})\t--->>\t{self.lesson_credits}\t( Credits ) \nTeacher's Name :\t\t {self.teacher_name}\n "
 
-
+    def to_tuple(self):
+        return ((self.lesson_name, self.lesson_code, self.teacher_name, self.lesson_credits))
